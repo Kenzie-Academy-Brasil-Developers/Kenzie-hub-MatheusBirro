@@ -1,0 +1,39 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    button{
+        padding: 0px 1.3959rem;
+        height: 2.4065rem;
+        border-radius: 0.2538rem;
+        border: none;
+        background: var(--color-primary);
+
+        color: var(--color-white);
+        font-size: var(--font-size-headline);
+        font-weight: var(--font-weight-6);
+        line-height: 1.3233rem;
+    }
+    small{
+        color: var(--color-grey-1);
+        font-size: var(--font-size-input);
+        font-weight: var(--font-weight-4);
+        line-height: 0.9024rem;
+        text-align: center;
+    }
+    .btn__navigate{
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        height: 2.4065rem;
+        border-radius: 0.25rem;
+        border: none;
+        background: var(--color-grey-1);
+
+        color: var(--color-grey-0);
+        font-size: var(--font-size-headline);
+        font-weight: var(--font-weight-6);
+        line-height: 2.4065rem;
+    }
+}

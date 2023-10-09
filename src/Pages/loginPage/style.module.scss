@@ -1,0 +1,23 @@
+.logo__header{
+    margin: 5.0625rem auto 0 auto;
+    padding: 0 0 1.25rem 0;
+    display: flex;
+    justify-self: center;
+}
+main{
+    background-color: var(--color-grey-3);
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.1057rem 1.103rem;
+    gap: 1.103rem;
+    box-sizing: border-box;
+    max-width: 20.3125rem;
+    h2{
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-5);
+        line-height: 1.4038rem;
+    }
+}
