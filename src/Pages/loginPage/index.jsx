@@ -6,9 +6,9 @@ export const LoginPage = () =>{
     return (
         <>
         <header>
-            <img src={logo} alt="" className={styles.logo__header}/>
+            <img src={logo} alt="Logo" className={styles.logo__header}/>
         </header>
-        <main>
+        <main className={styles.main__login}>
             <h2>Login</h2>
             <LoginForm />
         </main>

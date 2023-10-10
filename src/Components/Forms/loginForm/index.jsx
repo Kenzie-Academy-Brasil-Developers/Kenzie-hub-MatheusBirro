@@ -11,7 +11,7 @@ export const LoginForm = () => {
     }
 
     return(
-        <form onSubmit={handleSubmit(submit)}>
+        <form className={styles.form__container} onSubmit={handleSubmit(submit)}>
             <InputForm label="Email" type="email" placeholder="Digite aqui seu email" {...register("email")}/>
             <InputForm label="Senha" type="password" placeholder="Digite aqui sua senha" {...register("password")}/>
             <button type="submit">Entrar</button>

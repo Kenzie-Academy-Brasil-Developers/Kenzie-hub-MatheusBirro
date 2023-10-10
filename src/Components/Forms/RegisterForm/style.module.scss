@@ -1,0 +1,34 @@
+.form__container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    .label__select{
+        color: var(--color-grey-0);
+        font-size: var(--font-size-input);
+        font-weight: var(--font-weight-3);
+    }
+    select{
+        height: 2.3986rem;
+        padding: 0rem 0.8117rem;
+        border-radius: 0.1999rem;
+        border: 0.974px solid var(--color-grey-2);
+        background: var(--color-grey-2);
+        color: var(--color-grey-1);
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-3);
+        line-height: 1.3189rem;
+    }
+    button{
+        padding: 0px 1.3959rem;
+        height: 2.4065rem;
+        border-radius: 0.2538rem;
+        border: none;
+        background: var(--color-primary);
+
+        color: var(--color-white);
+        font-size: var(--font-size-headline);
+        font-weight: var(--font-weight-6);
+        line-height: 1.3233rem;
+    }
+}

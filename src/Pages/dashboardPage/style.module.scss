@@ -1,0 +1,96 @@
+.header__dashboard{
+    margin: 0 auto;
+    padding: 1.625rem 0.8125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 48.125rem;
+    width: 100%;
+    box-sizing: border-box;
+    img{
+        width: 6.5954rem;
+        height: 0.9144rem;
+    }
+    .header__btn{
+        text-decoration: none;
+        display: inline-flex;
+        height: 2rem;
+        padding: 0px 1.0152rem;
+        align-items: center;
+        border-radius: 0.25rem;
+        background: var(--color-grey-3);
+        color: var(--color-grey-0);
+        font-size: var(--font-size-headline);
+        font-weight: var(--font-weight-4);
+        line-height: 1.7766rem;
+    }
+}
+.main__dashboard{
+    
+    .border__container{
+        border-bottom: 1px solid var(--color-grey-2);
+        border-top: 1px solid var(--color-grey-2);
+        max-width: 100vw;
+        padding: 2.1875rem 0;
+        div{
+            padding: 1.625rem 0;
+            max-width: 48.125rem;
+            width: 92%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            h2{
+                color: var(--color-grey-0);
+                font-size: var(--font-size-1);
+                font-weight: var(--font-weight-5);
+                line-height: 1.75rem;
+            }
+            p{
+                color: var(--color-grey-1);
+                font-size: var(--font-size-headline);
+                font-weight: var(--font-weight-3);
+                line-height: 1.375rem; 
+            }
+        }
+    }
+    div{
+        max-width: 770px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 2.3125rem 0.8125rem;
+        margin: 0 auto;
+        gap: 1.4375rem;
+        box-sizing: border-box;
+        h3{
+            color: var(--color-grey-0);
+            font-size: var(--font-size-1);
+            font-weight: var(--font-weight-5);
+            line-height: 1.75rem; 
+        }
+        p{
+            color: var(--color-white);
+            font-size: var(--font-size-2);
+            font-weight: var(--font-weight-3);
+            line-height: 1.5228rem; 
+        }
+    }
+}
+@media(min-width: 851px){
+    .header__dashboard{
+        box-sizing: unset;
+    }
+    .main__dashboard{
+        .border__container{
+            div{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 94%;
+            }
+        }
+        div{
+            box-sizing: unset;
+        }
+    }
+}

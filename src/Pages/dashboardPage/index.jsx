@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom"
+import styles from "./style.module.scss"
+import logo from "../../Assets/logo.svg"
 
 export const DashboardPage = () =>{
     return (
         <>
-            <header>Kenzie Hub</header>
-            <Link to="/">Sair</Link>
-            <main>
-                <div>
-                    <h2>Olá, Samuel Leão</h2>
-                    <p>{`Primeiro módulo (Introdução ao Frontend)`}</p>
+            <header className={styles.header__dashboard}>
+                <img src={logo} alt="logo
+                " />
+                <Link className={styles.header__btn} to="/">Sair</Link>
+            </header>
+            <main className={styles.main__dashboard}>
+                <div className={styles.border__container}>
+                    <div>
+                        <h2>Olá, Samuel Leão</h2>
+                        <p>{`Primeiro módulo (Introdução ao Frontend)`}</p>
+                    </div>
                 </div>
                 <div>
                     <h3>{`Que pena! Estamos em desenvolvimento :(`}</h3>
