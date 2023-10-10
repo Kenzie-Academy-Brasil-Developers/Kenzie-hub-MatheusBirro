@@ -6,7 +6,7 @@ export const InputForm = forwardRef (({label, id, error, ...rest}, ref) => {
         <>
             <label htmlFor={id} className={styles.login__label}>{label}</label>
             <input className={styles.login__input} ref={ref} {...rest} />
-            {error ? <small>{error.message}</small> : null }
+            {error ? <small className={styles.login__virified}>{error.message}</small> : null }
         </>
     )
 })

@@ -34,7 +34,7 @@ export const LoginForm = ({userProfile, setUserProfile}) => {
             <InputForm label="Email" type="email" placeholder="Digite aqui seu email" {...register("email")} error={errors.email}/>
             <InputForm label="Senha" type="password" placeholder="Digite aqui sua senha" {...register("password")} error={errors.password}/>
             <button type="submit">Entrar</button>
-            <small>Ainda não possui uma conta?</small>
+            <small className={styles.register__info}>Ainda não possui uma conta?</small>
             <Link to="/register" className={styles.btn__navigate}>Cadastre-se</Link>
         </form>
     )

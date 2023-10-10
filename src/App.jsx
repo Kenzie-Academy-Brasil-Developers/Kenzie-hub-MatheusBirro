@@ -1,11 +1,13 @@
+import { ToastContainer } from "react-toastify"
 import { RoutesMain } from "./Routes/RoutesMain"
-import globalStyles from "./Styles/globalStyles.scss"
+import "./Styles/globalStyles.scss"
 
 function App() {
 
   return (
     <>
       <RoutesMain />
+      <ToastContainer position="top-right"/>
     </>
   )
 }

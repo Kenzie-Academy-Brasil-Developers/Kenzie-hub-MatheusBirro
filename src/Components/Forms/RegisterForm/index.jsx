@@ -5,6 +5,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { formSchemaRegister } from "../../formSchema";
 import { api } from "../../../Services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const RegisterForm = () => {
     const navigate = useNavigate()
@@ -16,10 +19,10 @@ export const RegisterForm = () => {
     const userRegister =  async (payload) =>{
         try{
             const {data} = await api.post("users", payload)
-            console.log(data);
             navigate("/")
+            toast("Conta criada com sucesso!")
         }catch (error){
-            console.log(error);
+            toast.error("Ops! Algo deu errado")
         }
     }
 
