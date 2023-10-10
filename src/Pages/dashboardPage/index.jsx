@@ -1,20 +1,29 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import styles from "./style.module.scss"
 import logo from "../../Assets/logo.svg"
 
-export const DashboardPage = () =>{
+export const DashboardPage = ({userProfile, setUserProfile}) =>{
+
+    const navigate = useNavigate()
+
+    const userLogout = () =>{
+        setUserProfile(null)
+        localStorage.removeItem("@tokenUser")
+        navigate("/")
+    }
+
     return (
         <>
             <header className={styles.header__dashboard}>
                 <img src={logo} alt="logo
                 " />
-                <Link className={styles.header__btn} to="/">Sair</Link>
+                <button className={styles.header__btn} onClick={()=> {userLogout()}}>Sair</button>
             </header>
             <main className={styles.main__dashboard}>
                 <div className={styles.border__container}>
                     <div>
-                        <h2>Olá, Samuel Leão</h2>
-                        <p>{`Primeiro módulo (Introdução ao Frontend)`}</p>
+                        <h2>{`Olá, ${userProfile.name}`}</h2>
+                        <p>{userProfile.course_module}</p>
                     </div>
                 </div>
                 <div>

@@ -7,7 +7,7 @@ import { formSchemaLogin } from "../../formSchema";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../Services/api";
 
-export const LoginForm = () => {
+export const LoginForm = ({userProfile, setUserProfile}) => {
     const navigate = useNavigate()
 
     const { register, handleSubmit, formState: {errors}} = useForm({
@@ -17,6 +17,8 @@ export const LoginForm = () => {
     const userLogin = async (payload) =>{
         try{
             const {data} = await api.post("sessions", payload)
+            setUserProfile(data.user)
+            localStorage.setItem("@tokenUser", JSON.stringify(data.token))
             navigate("/dashboard")
         }catch (error){
             console.log(error);
@@ -24,7 +26,6 @@ export const LoginForm = () => {
     }
 
     const submit = (payload) => {
-        console.log(payload)
         userLogin(payload)
     }
 
@@ -35,7 +36,6 @@ export const LoginForm = () => {
             <button type="submit">Entrar</button>
             <small>Ainda não possui uma conta?</small>
             <Link to="/register" className={styles.btn__navigate}>Cadastre-se</Link>
-            <Link to="/dashboard">dashboard</Link>
         </form>
     )
 }

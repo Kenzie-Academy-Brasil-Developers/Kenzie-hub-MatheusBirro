@@ -2,7 +2,7 @@ import { LoginForm } from "../../Components/Forms/loginForm"
 import styles from "./style.module.scss"
 import logo from "../../Assets/logo.svg"
 
-export const LoginPage = () =>{
+export const LoginPage = ({userProfile, setUserProfile}) =>{
     return (
         <>
         <header>
@@ -10,7 +10,7 @@ export const LoginPage = () =>{
         </header>
         <main className={styles.main__login}>
             <h2>Login</h2>
-            <LoginForm />
+            <LoginForm userProfile={userProfile} setUserProfile={setUserProfile}/>
         </main>
         </>
     )

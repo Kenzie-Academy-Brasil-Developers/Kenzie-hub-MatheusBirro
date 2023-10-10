@@ -18,11 +18,13 @@
         padding: 0px 1.0152rem;
         align-items: center;
         border-radius: 0.25rem;
+        border: none;
         background: var(--color-grey-3);
         color: var(--color-grey-0);
         font-size: var(--font-size-headline);
         font-weight: var(--font-weight-4);
         line-height: 1.7766rem;
+        cursor: pointer;
     }
 }
 .main__dashboard{
