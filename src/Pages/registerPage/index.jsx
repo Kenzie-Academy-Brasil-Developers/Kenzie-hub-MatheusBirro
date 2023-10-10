@@ -11,8 +11,10 @@ export const RegisterPage = () =>{
             <Link className={styles.header__btn} to="/">Voltar</Link>
         </div>
         <main className={styles.main__register}>
-            <h2>Crie sua conta</h2>
-            <small>Rápido e grátis, vamos nessa</small>
+            <div>
+                <h2>Crie sua conta</h2>
+                <small>Rápido e grátis, vamos nessa</small>  
+            </div>
             <RegisterForm />
         </main>
         </>
