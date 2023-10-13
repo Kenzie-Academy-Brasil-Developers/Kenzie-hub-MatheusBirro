@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "zod"
 
 export const formSchemaLogin = z.object({
     email: z
@@ -23,7 +23,8 @@ export const formSchemaRegister = z.object({
     .min(8, "É necessário ter pelo menos 8 caracteres")
     .regex(/(?=.*[A-Z])/, "É necessário conter pelo menos uma letra maiúscula")
     .regex(/(?=.*[a-z])/, "É necessário conter pelo menos uma letra minúscula")
-    .regex(/(?=.*[0-9])/, "É necessário conter pelo menos um digito"),
+    .regex(/(?=.*[0-9])/, "É necessário conter pelo menos um digito")
+    .regex(/(?=.*[!@#$%^&*])/, "É necessário conter pelo menos um caractere especial"),
     confirmPassword: z
     .string()
     .nonempty("É necessário confirmar a senha"),

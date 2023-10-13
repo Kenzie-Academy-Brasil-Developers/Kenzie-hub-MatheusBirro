@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form"
 import { InputForm } from "../input"
 import styles from "./style.module.scss"
-import { zodResolver } from "@hookform/resolvers/zod";
-import { formSchemaRegister } from "../../formSchema";
-import { api } from "../../../Services/api";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import { zodResolver } from "@hookform/resolvers/zod"
+import { formSchemaRegister } from "../../formSchema"
+import { api } from "../../../Services/api"
+import { useNavigate } from "react-router-dom"
+import { toast } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 
 export const RegisterForm = () => {

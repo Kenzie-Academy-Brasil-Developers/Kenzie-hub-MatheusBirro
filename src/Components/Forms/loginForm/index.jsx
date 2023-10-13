@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form"
 import { InputForm } from "../input"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import styles from "./style.module.scss"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formSchemaLogin } from "../../formSchema";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../../Services/api";
+import { formSchemaLogin } from "../../formSchema"
+import { useNavigate } from "react-router-dom"
+import { api } from "../../../Services/api"
 
 export const LoginForm = ({userProfile, setUserProfile}) => {
     const navigate = useNavigate()
@@ -21,7 +21,7 @@ export const LoginForm = ({userProfile, setUserProfile}) => {
             localStorage.setItem("@tokenUser", JSON.stringify(data.token))
             navigate("/dashboard")
         }catch (error){
-            console.log(error);
+            console.log(error)
         }
     }
 
