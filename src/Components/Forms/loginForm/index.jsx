@@ -21,7 +21,7 @@ export const LoginForm = ({userProfile, setUserProfile}) => {
             localStorage.setItem("@tokenUser", JSON.stringify(data.token))
             navigate("/dashboard")
         }catch (error){
-            console.log(error)
+            console.error(error)
         }
     }
 
