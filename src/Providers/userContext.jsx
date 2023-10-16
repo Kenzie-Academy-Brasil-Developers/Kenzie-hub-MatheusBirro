@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { api } from "../Services/api"
 import { toast } from "react-toastify"
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'
 export const UserContext = createContext({})
 
 export const UserProvider = ({children}) => {
-    const [userProfile, setUserProfile] = useState(null)
+    const [userProfile, setUserProfile] = useState({})
 
     const navigate = useNavigate()
 
@@ -37,6 +37,28 @@ export const UserProvider = ({children}) => {
             toast.error("Ops! Algo deu errado")
         }
     }
+
+    useEffect(() =>{
+        const loadUser = async() =>{
+            const tokenJSON = localStorage.getItem("@tokenUser")
+            const token = JSON.parse(tokenJSON)
+
+            if (token) {
+                try {
+                    const {data} = await api.get(`profile`,{
+                        headers: {
+                            Authorization: `Bearer ${token}`,
+                        },
+                    })
+                    setUserProfile(data)
+                }catch (error) {
+                    console.error(error)
+                    localStorage.removeItem("@tokenUser")
+                }
+            }
+        }
+        loadUser()
+    },[])
 
     return(
         <UserContext.Provider value={{userProfile, setUserProfile, userLogin, userLogout, userRegister}}>
