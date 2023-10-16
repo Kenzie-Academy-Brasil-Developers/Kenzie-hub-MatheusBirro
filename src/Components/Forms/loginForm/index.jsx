@@ -4,26 +4,15 @@ import { Link } from "react-router-dom"
 import styles from "./style.module.scss"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchemaLogin } from "../../formSchema"
-import { useNavigate } from "react-router-dom"
-import { api } from "../../../Services/api"
+import { useContext } from "react"
+import { UserContext } from "../../../Providers/userContext"
 
-export const LoginForm = ({userProfile, setUserProfile}) => {
-    const navigate = useNavigate()
+export const LoginForm = () => {
+    const {userLogin} = useContext(UserContext)
 
     const { register, handleSubmit, formState: {errors}} = useForm({
         resolver: zodResolver(formSchemaLogin),
     });
-
-    const userLogin = async (payload) =>{
-        try{
-            const {data} = await api.post("sessions", payload)
-            setUserProfile(data.user)
-            localStorage.setItem("@tokenUser", JSON.stringify(data.token))
-            navigate("/dashboard")
-        }catch (error){
-            console.error(error)
-        }
-    }
 
     const submit = (payload) => {
         userLogin(payload)
