@@ -23,7 +23,7 @@ export const UserProvider = ({children}) => {
     }
 
     const userLogout = () =>{
-        setUserProfile(null)
+        setUserProfile({})
         localStorage.removeItem("@tokenUser")
         navigate("/")
     }
@@ -40,12 +40,12 @@ export const UserProvider = ({children}) => {
 
     useEffect(() =>{
         const loadUser = async() =>{
-            const tokenJSON = localStorage.getItem("@tokenUser")
-            const token = JSON.parse(tokenJSON)
+            // const tokenJSON = localStorage.getItem("@tokenUser")
+            const token = JSON.parse(localStorage.getItem("@tokenUser"))
 
             if (token) {
                 try {
-                    const {data} = await api.get(`profile`,{
+                    const {data} = await api.get("profile",{
                         headers: {
                             Authorization: `Bearer ${token}`,
                         },
