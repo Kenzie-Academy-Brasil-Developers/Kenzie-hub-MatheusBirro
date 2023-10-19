@@ -4,19 +4,20 @@ import styles from "./style.module.scss"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchemaRegister } from "../../formSchema"
 import 'react-toastify/dist/ReactToastify.css'
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { UserContext } from "../../../Providers/userContext"
 
 
 export const RegisterForm = () => {
     const {userRegister} = useContext(UserContext)
+    const [loading, setLoading] = useState(false)
 
     const { register, handleSubmit, formState: {errors}} = useForm({
         resolver: zodResolver(formSchemaRegister)
     });
 
     const submit = (payload) => {
-        userRegister(payload)
+        userRegister(payload, setLoading)
     }
 
     return(
@@ -36,7 +37,7 @@ export const RegisterForm = () => {
                 <option value="Quarto módulo (Backend Avançado)">Quarto Módulo</option>
             </select>
             {errors.course_module? <small>{errors.course_module.message}</small> : null}
-            <button type="submit">Cadastrar</button>
+            <button type="submit" disabled={loading}>Cadastrar</button>
         </form>
     )
 }

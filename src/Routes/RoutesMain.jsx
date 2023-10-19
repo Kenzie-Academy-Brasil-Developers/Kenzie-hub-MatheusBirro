@@ -11,7 +11,11 @@ export const RoutesMain = () =>{
             <Route path="/" element={<ProtectedLogin />}>
                 <Route index element={<LoginPage />} />
             </Route>
-            <Route path="/register" element={<RegisterPage />} />
+
+            <Route path="/register" element={<ProtectedLogin />}>
+                <Route index element={<RegisterPage />} />
+            </Route>
+
             <Route path="/dashboard" element={<ProtectedDashboard />}>
                 <Route index element={<DashboardPage />} />
             </Route>
