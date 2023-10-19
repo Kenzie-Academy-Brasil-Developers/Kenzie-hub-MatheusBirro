@@ -31,6 +31,7 @@ export const UserProvider = ({children}) => {
     }
 
     const userLogout = () =>{
+        toast.warning("Deslogado")
         setUserProfile({})
         localStorage.removeItem("@tokenUser")
         navigate("/")
