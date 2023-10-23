@@ -41,3 +41,12 @@ export const formSchemaRegister = z.object({
         message: "As senhas não correspondem",
         path: ["confirmPassword"],
     })
+
+export const formSchemaCreateTech = z.object({
+    title: z
+        .string()
+        .nonempty("Nome é obrigatório"),
+    status: z
+        .string()
+        .nonempty("Status é obrigatório"),
+})

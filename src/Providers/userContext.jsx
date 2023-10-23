@@ -56,7 +56,6 @@ export const UserProvider = ({children}) => {
 
     useEffect(() =>{
         const loadUser = async() =>{
-            // const tokenJSON = localStorage.getItem("@tokenUser")
             const token = JSON.parse(localStorage.getItem("@tokenUser"))
 
             if (token) {

@@ -3,6 +3,7 @@ import { DashboardPage } from "../Pages/dashboardPage"
 import { LoginPage } from "../Pages/loginPage"
 import { RegisterPage } from "../Pages/registerPage"
 import { ProtectedDashboard, ProtectedLogin } from "../Components/protectedRoutes"
+import { TechProviders } from "../Providers/techProviders"
 
 export const RoutesMain = () =>{
 
@@ -17,7 +18,10 @@ export const RoutesMain = () =>{
             </Route>
 
             <Route path="/dashboard" element={<ProtectedDashboard />}>
-                <Route index element={<DashboardPage />} />
+                <Route index element={
+                    <TechProviders>
+                        <DashboardPage />
+                    </TechProviders>} />
             </Route>
         </Routes>
     )
