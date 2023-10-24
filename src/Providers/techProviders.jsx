@@ -25,6 +25,7 @@ export const TechProviders = ({children}) => {
             setCreateIsOpen(false)
             toast("Tech criada com sucesso")
         }catch (error){
+            console.log(error);
             if (error.response.data.message === "User Already have this technology created you can only update it") {
                 toast.error("Nome de tecnologia já existente")
             }else{

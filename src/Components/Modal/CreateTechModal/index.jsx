@@ -16,7 +16,7 @@ export const CreateTechModal = ({setCreateIsOpen}) =>{
     })
 
     const submit = (payload) => {
-        createTech(payload, setLoading, setCreateIsOpen(false))
+        createTech(payload, setLoading, setCreateIsOpen)
     }
 
     return(
