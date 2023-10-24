@@ -3,16 +3,14 @@ import logo from "../../Assets/logo.svg"
 import { useContext, useState } from "react"
 import { UserContext } from "../../Providers/userContext"
 import { CreateTechModal } from "../../Components/Modal/CreateTechModal"
-import { EditTechModal } from "../../Components/Modal/EditTechModal"
 import { TechContext } from "../../Providers/techProviders"
+import { TechList } from "../../Components/techList"
 
 export const DashboardPage = () =>{
 
     const {userProfile, userLogout} = useContext(UserContext)
     const [createIsOpen, setCreateIsOpen] = useState(false)
-    const [editIsOpen, setEditIsOpen] = useState(false)
-    const {techs, removeTech} = useContext(TechContext)
-    const [loading, setLoading] = useState(false)
+    const {techs} = useContext(TechContext)
 
     return (
         <>
@@ -36,25 +34,8 @@ export const DashboardPage = () =>{
                     {createIsOpen ? <CreateTechModal setCreateIsOpen={setCreateIsOpen}/> : null}
                     {techs.length === 0 ? 
                         <p>Você não tem nenhuma tech</p> : 
-
-                        <div className={styles.content__ul_post}>
-                            <ul>
-                                {techs.map((tech) => (
-                                    <li key={tech.id}>
-                                        <h3>{tech.title}</h3>
-                                        <div>
-                                            <p>{tech.status}</p>
-                                            <div>
-                                                <button className={styles.btn__edit} onClick={() => {setEditIsOpen(true)}}></button>
-                                                <button className={styles.btn__delete} onClick={() => {removeTech(tech.id, setLoading)}}></button>
-                                            </div>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+                        <TechList />
                     }
-                    {editIsOpen ? <EditTechModal setEditIsOpen={setEditIsOpen}/> : null}
                 </div>
             </main>
         </>

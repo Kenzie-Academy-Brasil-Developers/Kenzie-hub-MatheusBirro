@@ -1,0 +1,11 @@
+.content__ul_post{
+    padding: 1rem 0.625rem;
+    background-color: var(--color-grey-3);
+    border-radius: 4px;
+    box-sizing: border-box;
+    ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0.4063rem;
+    }
+}

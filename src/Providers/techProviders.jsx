@@ -44,7 +44,7 @@ export const TechProviders = ({children}) => {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            console.log(data);
+            // console.log(data);
             const newTechs = techs.filter((tech) => tech.id !== id)
             setTechs(newTechs)
             toast("Tech deletada com sucesso")

@@ -1,0 +1,44 @@
+.text__delete{
+    text-align: center;
+    color: var(--color-negative);
+}
+.content__card{
+    background-color: var(--color-grey-4);
+    height: 76.222px;
+    border-radius: 4px;
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    .content__status_card{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.125rem;
+        p{
+            color: var(--color-grey-1);
+            font-size: var(--font-size-headline);
+            font-weight: var(--font-weight-3);
+            line-height: 22.334px; /* 183.333% */
+        }
+        .btn__edit{
+            background-image: url(../../../Assets/ButtonEdit.svg);
+            background-color: var(--color-grey-4);
+            width: 1rem;
+            height: 1rem;
+            border: none;
+            cursor: pointer;
+            color: var(--color-white);
+        }
+        .btn__delete{
+            background-image: url(../../../Assets/ButtonDelete.svg);
+            background-color: var(--color-grey-4);
+            width: 1rem;
+            height: 1rem;
+            border: none;
+            cursor: pointer;
+            color: var(--color-white);
+        }
+    }
+}
