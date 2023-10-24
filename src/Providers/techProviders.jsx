@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState} from "react"
 import { UserContext } from "./userContext"
 import { toast } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css"
 import { api } from "../Services/api"
 
 export const TechContext = createContext({})

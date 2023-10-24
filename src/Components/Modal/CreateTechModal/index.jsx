@@ -1,10 +1,10 @@
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 import { InputForm } from "../../Forms/input"
 import styles from "./style.module.scss"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { formSchemaCreateTech } from "../../formSchema";
-import { useContext, useState } from "react";
-import { TechContext } from "../../../Providers/techProviders";
+import { formSchemaCreateTech } from "../../formSchema"
+import { useContext, useState } from "react"
+import { TechContext } from "../../../Providers/techProviders"
 
 export const CreateTechModal = ({setCreateIsOpen}) =>{
     const [loading, setLoading] = useState(false)
@@ -27,7 +27,7 @@ export const CreateTechModal = ({setCreateIsOpen}) =>{
                     <button className={styles.closeButton} onClick={() =>{setCreateIsOpen(false)}}>X</button>
                 </div>
                 <div className={styles.container__form_post}>
-                    <form action="" className={styles.form} onSubmit={handleSubmit(submit)}>
+                    <form className={styles.form} onSubmit={handleSubmit(submit)}>
                         <InputForm label="Nome" type="text" placeholder="Typescript" {...register("title")}  error={errors.title}/>
                         <label className={styles.label__select} htmlFor="status">Selecionar Status</label>
                         <select name="status" id="staus" {...register("status")} error={errors.status}>

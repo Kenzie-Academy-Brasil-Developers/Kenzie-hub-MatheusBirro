@@ -3,8 +3,6 @@ import styles from "./style.module.scss"
 import { TechContext } from "../../Providers/techProviders"
 import { TechCard } from "./techCard"
 
-
-
 export const TechList = () => {
     const {techs} = useContext(TechContext)
     

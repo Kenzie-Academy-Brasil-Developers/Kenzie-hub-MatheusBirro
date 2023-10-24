@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { api } from "../Services/api"
 import { toast } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css"
 
 export const UserContext = createContext({})
 

@@ -7,7 +7,6 @@ import { TechContext } from "../../Providers/techProviders"
 import { TechList } from "../../Components/techList"
 
 export const DashboardPage = () =>{
-
     const {userProfile, userLogout} = useContext(UserContext)
     const [createIsOpen, setCreateIsOpen] = useState(false)
     const {techs} = useContext(TechContext)
@@ -15,8 +14,7 @@ export const DashboardPage = () =>{
     return (
         <>
             <header className={styles.header__dashboard}>
-                <img src={logo} alt="logo
-                " />
+                <img src={logo} alt="logo" />
                 <button className={styles.header__btn} onClick={()=> {userLogout()}}>Sair</button>
             </header>
             <main className={styles.main__dashboard}>
@@ -32,10 +30,7 @@ export const DashboardPage = () =>{
                         <button onClick={() => {setCreateIsOpen(true)}}></button>
                     </div>
                     {createIsOpen ? <CreateTechModal setCreateIsOpen={setCreateIsOpen}/> : null}
-                    {techs.length === 0 ? 
-                        <p>Você não tem nenhuma tech</p> : 
-                        <TechList />
-                    }
+                    {techs.length === 0 ? <p>Você não tem nenhuma tecnologia cadastrada</p> : <TechList />}
                 </div>
             </main>
         </>

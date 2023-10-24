@@ -3,7 +3,7 @@ import { InputForm } from "../input"
 import styles from "./style.module.scss"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { formSchemaRegister } from "../../formSchema"
-import 'react-toastify/dist/ReactToastify.css'
+import "react-toastify/dist/ReactToastify.css"
 import { useContext, useState } from "react"
 import { UserContext } from "../../../Providers/userContext"
 

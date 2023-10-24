@@ -17,7 +17,7 @@ export const TechCard = ({tech}) => {
                 <h3>{tech.title}</h3>
                 <div className={styles.content__status_card}>
                     <p>{tech.status}</p>
-                    <div>
+                    <div className={styles.btn__container}>
                         <button className={styles.btn__edit} onClick={() => { setEditingTech(tech) }}></button>
                         <button className={styles.btn__delete} onClick={() => { removeTech(tech.id, setLoading) }}></button>
                     </div>

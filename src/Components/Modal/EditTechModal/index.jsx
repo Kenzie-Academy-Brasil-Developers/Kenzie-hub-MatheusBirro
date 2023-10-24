@@ -30,7 +30,7 @@ export const EditTechModal = () =>{
                     <button className={styles.closeButton} onClick={() =>{setEditingTech(null)}}>X</button>
                 </div>
                 <div className={styles.container__form_post}>
-                    <form action="" className={styles.form} onSubmit={handleSubmit(submit)}>
+                    <form className={styles.form} onSubmit={handleSubmit(submit)}>
                         <InputForm label="Nome do projeto" type="text" placeholder="Typescript" {...register("title")}  error={errors.title} disabled={true}/>
                         <label className={styles.label__select} htmlFor="status">Status</label>
                         <select name="status" id="status" {...register("status")} error={errors.status}>
