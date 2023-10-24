@@ -9,6 +9,7 @@ export const TechContext = createContext({})
 export const TechProviders = ({children}) => {
     const {userProfile} = useContext(UserContext)
     const [techs, setTechs] = useState([])
+    const [editingTech, setEditingTech] = useState(null)
 
     const createTech =  async (payload, setLoading, setCreateIsOpen) =>{
         const token = JSON.parse(localStorage.getItem("@tokenUser"))
@@ -44,10 +45,36 @@ export const TechProviders = ({children}) => {
                     Authorization: `Bearer ${token}`,
                 },
             })
-            // console.log(data);
             const newTechs = techs.filter((tech) => tech.id !== id)
             setTechs(newTechs)
-            toast("Tech deletada com sucesso")
+            toast("Tech deletada com sucesso")  
+        }catch (error){
+            toast.error("Ops! Algo deu errado")  
+        }finally{
+            setLoading(false)
+        }
+    }
+
+    const editTech = async(payload, setLoading, id) =>{
+        const token = JSON.parse(localStorage.getItem("@tokenUser"))
+        const newStatus = {status: payload}
+        
+        try{
+            setLoading(true)
+            const {data} = await api.put(`users/techs/${id}`, newStatus, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            setEditingTech(false)
+            const newTechs = techs.map((tech)=>{
+                if (tech.id === editingTech.id) {
+                    return tech.status = payload
+                } else{
+                    return tech
+                }
+            })
+            toast("Tech editada com sucesso")  
         }catch (error){
             toast.error("Ops! Algo deu errado")  
         }finally{
@@ -60,7 +87,7 @@ export const TechProviders = ({children}) => {
     },[userProfile])
 
     return (
-        <TechContext.Provider value={{techs, createTech, removeTech}}>
+        <TechContext.Provider value={{techs, createTech, removeTech, editTech, editingTech, setEditingTech}}>
             {children}
         </TechContext.Provider>
     )

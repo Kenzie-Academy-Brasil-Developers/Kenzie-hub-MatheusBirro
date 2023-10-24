@@ -8,15 +8,13 @@ import { TechCard } from "./techCard"
 export const TechList = () => {
     const {techs} = useContext(TechContext)
     
-    return(
-        <>
-            <div className={styles.content__ul_post}>
-                <ul>
-                    {techs.map((tech) => (
-                        <TechCard key={tech.id} tech={tech}/>
-                    ))}
-                </ul>
-            </div>
-        </>
+    return (
+        <div className={styles.content__ul_post}>
+            <ul>
+                {techs.map((tech) => (
+                    <TechCard key={tech.id} tech={tech} />
+                ))}
+            </ul>
+        </div>
     )
 }

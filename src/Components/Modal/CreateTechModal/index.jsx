@@ -20,14 +20,14 @@ export const CreateTechModal = ({setCreateIsOpen}) =>{
     }
 
     return(
-        <div className={styles.modalOverlay} onSubmit={handleSubmit(submit)}>
+        <div className={styles.modalOverlay} >
             <div className={styles.modalBox}>
                 <div className={styles.modal__header}>
                     <h3>Cadastrar Tecnologias</h3>
                     <button className={styles.closeButton} onClick={() =>{setCreateIsOpen(false)}}>X</button>
                 </div>
                 <div className={styles.container__form_post}>
-                    <form action="" className={styles.form}>
+                    <form action="" className={styles.form} onSubmit={handleSubmit(submit)}>
                         <InputForm label="Nome" type="text" placeholder="Typescript" {...register("title")}  error={errors.title}/>
                         <label className={styles.label__select} htmlFor="status">Selecionar Status</label>
                         <select name="status" id="staus" {...register("status")} error={errors.status}>

@@ -4,10 +4,9 @@ import { EditTechModal } from "../../Modal/EditTechModal"
 import { TechContext } from "../../../Providers/techProviders"
 
 export const TechCard = ({tech}) => {
-    const [editIsOpen, setEditIsOpen] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const {removeTech} = useContext(TechContext)
+    const {removeTech, editingTech, setEditingTech} = useContext(TechContext)
 
     return (
         <>
@@ -19,11 +18,11 @@ export const TechCard = ({tech}) => {
                 <div className={styles.content__status_card}>
                     <p>{tech.status}</p>
                     <div>
-                        <button className={styles.btn__edit} onClick={() => { setEditIsOpen(true) }}></button>
+                        <button className={styles.btn__edit} onClick={() => { setEditingTech(tech) }}></button>
                         <button className={styles.btn__delete} onClick={() => { removeTech(tech.id, setLoading) }}></button>
                     </div>
                 </div>
-                {editIsOpen ? <EditTechModal setEditIsOpen={setEditIsOpen}/> : null}
+                {editingTech ? <EditTechModal /> : null}
             </li>
         }
         </>
