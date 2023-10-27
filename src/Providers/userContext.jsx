@@ -9,6 +9,7 @@ export const UserContext = createContext({})
 export const UserProvider = ({children}) => {
     const [userProfile, setUserProfile] = useState({})
     const [loading, setLoading] = useState(false)
+    const [techs, setTechs] = useState([])
 
     const navigate = useNavigate()
 
@@ -79,7 +80,7 @@ export const UserProvider = ({children}) => {
     },[])
 
     return(
-        <UserContext.Provider value={{userProfile, setUserProfile, loading, userLogin, userLogout, userRegister}}>
+        <UserContext.Provider value={{userProfile, setUserProfile, loading, userLogin, userLogout, userRegister, techs, setTechs}}>
             {children}
         </UserContext.Provider>
     )

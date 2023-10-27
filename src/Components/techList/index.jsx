@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import styles from "./style.module.scss"
-import { TechContext } from "../../Providers/techProviders"
 import { TechCard } from "./techCard"
+import { UserContext } from "../../Providers/userContext"
 
 export const TechList = () => {
-    const {techs} = useContext(TechContext)
+    const {techs} = useContext(UserContext)
     
     return (
         <div className={styles.content__ul_post}>

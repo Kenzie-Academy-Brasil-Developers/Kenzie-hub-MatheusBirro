@@ -7,8 +7,7 @@ import { api } from "../Services/api"
 export const TechContext = createContext({})
 
 export const TechProviders = ({children}) => {
-    const {userProfile} = useContext(UserContext)
-    const [techs, setTechs] = useState([])
+    const {userProfile, techs, setTechs} = useContext(UserContext)
     const [editingTech, setEditingTech] = useState(null)
 
     const createTech =  async (payload, setLoading, setCreateIsOpen) =>{
@@ -88,7 +87,7 @@ export const TechProviders = ({children}) => {
     },[userProfile])
 
     return (
-        <TechContext.Provider value={{techs, createTech, removeTech, editTech, editingTech, setEditingTech}}>
+        <TechContext.Provider value={{ createTech, removeTech, editTech, editingTech, setEditingTech}}>
             {children}
         </TechContext.Provider>
     )

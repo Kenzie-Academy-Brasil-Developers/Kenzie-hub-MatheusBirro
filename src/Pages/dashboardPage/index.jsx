@@ -3,13 +3,11 @@ import logo from "../../Assets/logo.svg"
 import { useContext, useState } from "react"
 import { UserContext } from "../../Providers/userContext"
 import { CreateTechModal } from "../../Components/Modal/CreateTechModal"
-import { TechContext } from "../../Providers/techProviders"
 import { TechList } from "../../Components/techList"
 
 export const DashboardPage = () =>{
-    const {userProfile, userLogout} = useContext(UserContext)
+    const {userProfile, userLogout, techs} = useContext(UserContext)
     const [createIsOpen, setCreateIsOpen] = useState(false)
-    const {techs} = useContext(TechContext)
 
     return (
         <>
